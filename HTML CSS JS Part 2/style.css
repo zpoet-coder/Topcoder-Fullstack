@@ -1,0 +1,150 @@
+:root {
+  --color-A: #e8c094;
+  --color-B: #c0cf8c;
+  --color-C: #9ecf8c;
+  --color-D: #fbdd9b;
+  --color-E: #8ab6c0;
+  --color-F: #fed1ef;
+  --color-G: #c0fedb;
+  font-size: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+.container {
+  width: 80rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem;
+  position: relative;
+}
+
+.block {
+  border: 3px dashed #000;
+  border-radius: 1rem;
+  width: 30rem;
+  height: 20rem;
+  display: inline-block;
+}
+
+.block-A {
+  background-color: var(--color-A);
+  width: 29.5rem;
+}
+
+.block-B {
+  background-color: var(--color-B);
+  width: 49.5rem;
+}
+
+.block-C {
+  background-color: var(--color-C);
+  width: 19.5rem;
+  height: 50rem;
+}
+
+.block-D {
+  background-color: var(--color-D);
+  width: 59.5rem;
+  height: 50rem;
+  position: relative;
+}
+
+.block-E {
+  background-color: var(--color-E);
+  width: 100%;
+}
+
+.block-F {
+  background-color: var(--color-F);
+  width: 20rem;
+  height: 15rem;
+}
+
+.block-G {
+  background-color: var(--color-G);
+  width: 30rem;
+  height: 20rem;
+  position: absolute;
+  left: 4rem;
+  top: 4rem;
+  background-color: rgb(138, 182, 192, 0.5);
+}
+
+/* 选择器练习 */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-A);
+  width: 30rem;
+  height: 15rem;
+  border: 1px solid #000;
+  border-radius: 1rem;
+}
+
+.level-0 {
+  background-color: var(--color-C);
+  width: 80rem;
+  height: 80rem;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  position: relative;
+  border: 3px dashed #000;
+  border-radius: 1rem;
+}
+
+.level-1 {
+  position: relative;
+}
+
+.level-2 {
+  position: relative;
+  top: 20rem;
+}
+
+/* main的所有子元素 */
+main .a {
+  background-color: yellow;
+}
+
+/* main的所有直系子元素 */
+main>.a {
+  background-color: green;
+}
+
+/* .b后的所有兄弟元素 */
+nav .b~.a {
+  background-color: red;
+}
+
+/* 紧邻.b后的第一个.a兄弟元素 */
+nav .b+.a {
+  background-color: blue;
+}
+
+input.in {
+  width: 100%;
+  height: 5rem;
+  border: 3px dashed #000;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  outline: none;
+}
+
+input[type='number'] {
+  background-color: var(--color-F);
+}
