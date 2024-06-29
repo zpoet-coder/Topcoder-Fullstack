@@ -96,6 +96,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+  line-height: 0;
 }
 
 .tittle {
@@ -107,11 +108,13 @@ body {
 }
 
 .right-form :not(:first-child) label {
+  display: block !important;
   color: #000;
   font-family: Lato;
   font-size: 6px;
   line-height: normal;
   font-weight: 700;
+  margin-bottom: 4px;
 }
 
 .right-form * input,
