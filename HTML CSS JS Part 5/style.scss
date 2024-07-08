@@ -1,0 +1,120 @@
+$color-red: #f5222d;
+$color-gold: #faad14;
+$color-cyan: #13c2c2;
+$color-blue: #1677ff;
+$color-purple: #722ed1;
+$color-magenta: #eb2f96;
+
+:root {
+  font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100dvh;
+}
+
+@mixin border($width: 2px, $style: dashed, $color: #666) {
+  border: $width $style $color;
+}
+
+@mixin flexCenter($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  @include border;
+  @include flexCenter(column, space-between, center);
+  background-color: $color-red;
+
+  header {
+    width: 100%;
+    background-color: $color-gold;
+    @include flexCenter;
+
+    nav {
+      width: 100%;
+      max-width: 1200px;
+      height: 5rem;
+      @include border;
+      background-color: $color-cyan;
+    }
+  }
+
+  main {
+    width: 100%;
+    height: 100%;
+    @include border;
+    @include flexCenter(row, center, center);
+
+    nav {
+      width: calc(20rem + 10%);
+      height: 100%;
+      @include border;
+      background-color: $color-blue;
+
+      @media (width< 768px) {
+        display: none; // 把DOM元素杀掉 不再占据空间
+        // visibility: hidden; // 视觉上不可见 依然占据空间
+        // opacity: 0; // 透明度为0
+      }
+
+      @media (width< 486px) {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    section {
+      flex: 1;
+      height: 100%;
+      @include border;
+      background-color: $color-purple;
+    }
+
+    aside {
+      width: calc(20rem + 10%);
+      height: 100%;
+      @include border;
+      background-color: $color-magenta;
+
+      @media (width< 1200px) {
+        display: none
+      }
+    }
+  }
+
+  footer {
+    width: 100%;
+    background-color: $color-gold;
+    @include flexCenter;
+
+    nav {
+      width: 100%;
+      max-width: 1200px;
+      height: 5rem;
+      @include border;
+      background-color: $color-cyan;
+    }
+  }
+}

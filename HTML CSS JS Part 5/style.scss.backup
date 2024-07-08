@@ -1,0 +1,80 @@
+@use 'base';
+
+:root {
+  font-size: 10px;
+}
+
+$color-red: #f5222d;
+$color-gold: #faad14;
+$color-cyan: #13c2c2;
+$color-blue: #1677ff;
+$color-purple: #722ed1;
+$color-magenta: #eb2f96;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100dvh;
+}
+
+// extend
+%block-shared {
+  width: 100%;
+  height: 5rem;
+}
+
+// mixin & include
+// @mixin new-block-shared($height: 5rem) {
+//   width: 100%;
+//   height: $height;
+// }
+
+header nav {
+  // @extend %block-shared;
+  @include base.new-block-shared;
+  background-color: $color-red;
+}
+
+// main nav {
+//   @include new-block-shared(15rem);
+//   background-color: $color-blue;
+// }
+
+// main section {
+//   @include new-block-shared;
+//   background-color: $color-gold;
+// }
+
+main {
+  nav {
+    @include base.new-block-shared(15rem);
+    background-color: $color-blue;
+
+    &:hover {
+      background-color: $color-cyan;
+    }
+  }
+
+  section {
+    @include base.new-block-shared;
+    background-color: $color-gold;
+  }
+}
+
+footer nav {
+  @include base.new-block-shared;
+  background-color: $color-purple;
+}
