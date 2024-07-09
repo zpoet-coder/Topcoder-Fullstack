@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --main-desktop-font-size: 24px;
+  --main-pad-font-size: calc(var(--main-desktop-font-size) * 4.8 / 6);
+  /* --main-phone-font-size: 15px; */
+  --main-background-color: #333;
+  --main-text-color: #fff;
+  --main-color: #03a8f4;
+  --main-desktop-border-color: #111;
+  --header-toggle-width: 30px;
+  --header-toggle-pad-width: calc(var(--header-toggle-width) * 5 / 6);
+  --screen-desktop-padding-top-bottom: 50px;
+  --screen-desktop-padding-left-right: 100px;
+  --screen-pad-padding-top-bottom: 10px;
+  --screen-pad-padding-left-right: 30px;
+  --footer-icon-width: 30px;
+  --footer-icon-pad-width: calc(var(--footer-icon-with) * 5 / 6);
+  --text-description-h1-desktop-size: 3rem;
+  --text-description-h2-desktop-size: 2.5rem;
+  --text-description-p-desktop-size: 1rem;
+
+  --text-description-h1-pad-size: 2.5rem;
+  --text-description-h2-pad-size: 2rem;
+  --text-description-p-pad-size: 1rem;
+  // font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+html,
+body {
+  all: unset;
+  width: 100dvw;
+  min-height: 100dvh;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--main-desktop-font-size);
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
+}
+
+a {
+  color: var(--main-text-color);
+}
+
+section {
+  &.main-structure {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--screen-desktop-padding-top-bottom) var(--screen-desktop-padding-left-right);
+
+    header {
+      display: flex;
+      justify-content: space-between;
+
+      .menu-logo {
+        background: url("/src/icons/menu.svg");
+        width: var(--header-toggle-width);
+        aspect-ratio: 1/1;
+        background-size: var(--header-toggle-width);
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: invert(1);
+      }
+    }
+
+    main {
+      display: flex;
+
+      video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+      }
+
+      aside.text-description {
+        h1 {
+          font-size: var(--text-description-h1-desktop-size);
+          line-height: 1em;
+        }
+
+        h2 {
+          font-size: var(--text-description-h2-desktop-size);
+          line-height: 1em;
+        }
+
+        p {
+          font-size: var(--text-description-p-desktop-size);
+          line-height: 1.5em;
+          max-width: 700px;
+          min-width: 400px;
+          margin: 3em 0;
+        }
+
+        .btn {
+          font-size: 20px;
+          border: 2px solid var(--main-text-color);
+          line-height: 1em;
+          padding: 10px 30px;
+          border-radius: 30px;
+          box-shadow:
+            1px 1px 8px rgba(0, 0, 0, 0.3),
+            -1px -1px 8px rgba(255, 255, 255, 0.3);
+          transition: all 0.3s;
+
+          &:hover {
+            background-color: var(--main-color);
+            letter-spacing: 5px;
+          }
+
+          &:active {
+            box-shadow: none;
+            background-color: #111;
+            letter-spacing: 5px;
+          }
+        }
+      }
+    }
+
+    footer {
+      display: flex;
+      gap: 30px;
+
+      a {
+        img {
+          width: var(--footer-icon-width);
+          filter: invert(1);
+        }
+
+        &:nth-child(1) {
+          animation-delay: 0.3s;
+        }
+
+        &:nth-child(2) {
+          animation-delay: 0.6s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 0.9s;
+        }
+      }
+    }
+  }
+}
